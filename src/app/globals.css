@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* Light theme (default) */
+:root{
+    --bg:#f6f8fb;         /* soft light */
+    --card:#ffffff;       /* pure white cards */
+    --text:#0f172a;       /* slate-900 */
+    --muted:#475569;      /* slate-600 */
+    --border:#e5e7eb;     /* slate-200 */
+    --accent:#2563eb;     /* blue-600 */
+  }
+
+/* Dark theme */
+html.dark{
+  --bg:#0b0c10;
+  --card:#111317;
+  --text:#e5e7eb;
+  --muted:#9aa0a6;
+  --border:#27272a;
+  --accent:#60a5fa;
+}
+
+html, body { background: var(--bg); color: var(--text); }
+a { text-decoration: none; }
+a.underline { text-decoration: underline; }
+
+
