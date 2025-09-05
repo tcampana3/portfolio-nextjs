@@ -52,12 +52,12 @@ export default function ContactSection() {
                 <Social
                   href="https://github.com/tcampana3"
                   label="GitHub"
-                  imgSrc="images/github_logo.png" // put your logo file in /public/images
+                  imgSrc="/images/github_logo.png" // put your logo file in /public/images
                 />
                 <Social
                   href="https://www.linkedin.com/in/anthony-campana-5b7684253"
                   label="LinkedIn"
-                  imgSrc="images/linkedin_logo.webp" // put your logo file in /public/images
+                  imgSrc="/images/linkedin_logo.webp" // put your logo file in /public/images
                 />
                 {/* Add more:
                 <Social href="https://x.com/yourhandle" label="X" imgSrc="/images/x.png" />
@@ -190,7 +190,7 @@ function Social({ href, label, imgSrc }) {
       className="h-9 w-9 grid place-items-center rounded-full border hover:opacity-80 transition bg-white"
       style={{ borderColor: "var(--border)" }}
     >
-      <img src={imgSrc} alt={label} className="h-5 w-5 object-contain" />
+      <Image src={imgSrc} alt={label} width={20} height={20} unoptimized />
     </a>
   );
 }

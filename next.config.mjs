@@ -5,7 +5,6 @@ const nextConfig = {
   trailingSlash: true,
   // you are using GitHub Pages without a custom domain:
   basePath: '/portfolio-nextjs',
-  assetPrefix: '/portfolio-nextjs/',
   eslint: { ignoreDuringBuilds: true},
 };
 export default nextConfig;
