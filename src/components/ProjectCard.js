@@ -45,7 +45,7 @@ export default function ProjectCard({ p }) {
               className="rounded-xl border shadow-sm overflow-hidden hover:shadow-md transition w-full max-w-[520px]"
               style={{ borderColor: "var(--border)" }}
             >
-              <div className="aspect-[16/10] bg-white">
+              <div className="relative aspect-[16/10] bg-white">
                 <Image
                   src={src} // e.g. "/images/Sorting.gif"
                   alt={`${p.title} screenshot ${i + 1}`}

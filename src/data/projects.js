@@ -11,7 +11,7 @@ export const projects = [
     summary:
       "Turn-based roguelike with dungeon generation, Dijkstra pathfinding (tunneling/non-tunneling), multi-round combat, equipment/loot, fog-of-war, targeting/teleport, and save/load. Implemented monsters/items parsing and unique/boss logic.",
     stack: ["C++", "C", "ncurses", "OOP", "Pathfinding", "Save/Load"],
-    images: ["/images/C_logo.png", "/images/c++2_logo.png"],
+    images: ["/images/C_Logo.png", "/images/c++2_logo.png"],
   },
   {
     title: "E-commerce Store Development (Shop Fusion)",
