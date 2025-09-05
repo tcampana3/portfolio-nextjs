@@ -1,5 +1,7 @@
 import Section from "@/components/Section";
 import ContactSection from "@/components/ContactSection";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -11,10 +13,12 @@ export default function AboutPage() {
           style={{ borderColor: "var(--border)" }}
         >
           {/* Headshot */}
-          <img
+          <Image
             src="/images/profile.JPG"
             alt="Anthony Campana headshot"
-            className="w-32 h-32 rounded-full object-cover shadow-md mb-4"
+            width={128}
+            height={128}
+            className="rounded-full object-cover shadow-md mb-4"
           />
 
           {/* Name & title */}
@@ -27,20 +31,20 @@ export default function AboutPage() {
 
           {/* CTAs */}
           <div className="mt-6 flex gap-3">
-            <a
+            <Link
               href="/projects"
               className="px-4 py-2 rounded-lg text-white"
               style={{ background: "var(--accent)" }}
             >
               View Projects
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/#contact"
               className="px-4 py-2 rounded-lg border"
               style={{ borderColor: "var(--border)" }}
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </section>

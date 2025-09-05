@@ -24,9 +24,12 @@ export default function ContactSection() {
         className="rounded-2xl p-8 border shadow-sm"
         style={{ background: "var(--card)", borderColor: "var(--border)" }}
       >
-        <h2 className="text-2xl font-semibold text-center mb-2">Get In Touch</h2>
+        <h2 className="text-2xl font-semibold text-center mb-2">
+          Get In Touch
+        </h2>
         <p className="text-center text-sm" style={{ color: "var(--muted)" }}>
-          Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
+          Feel free to reach out if you're looking for a developer, have a
+          question, or just want to connect.
         </p>
 
         <div className="mt-8 grid gap-8 md:grid-cols-2">
@@ -49,12 +52,12 @@ export default function ContactSection() {
                 <Social
                   href="https://github.com/tcampana3"
                   label="GitHub"
-                  imgSrc="/images/github_logo.png"     // put your logo file in /public/images
+                  imgSrc="images/github_logo.png" // put your logo file in /public/images
                 />
                 <Social
                   href="https://www.linkedin.com/in/anthony-campana-5b7684253"
                   label="LinkedIn"
-                  imgSrc="/images/linkedin_logo.webp"   // put your logo file in /public/images
+                  imgSrc="images/linkedin_logo.webp" // put your logo file in /public/images
                 />
                 {/* Add more:
                 <Social href="https://x.com/yourhandle" label="X" imgSrc="/images/x.png" />
@@ -73,7 +76,10 @@ export default function ContactSection() {
                   value={form.name}
                   onChange={update}
                   className="w-full rounded-md border px-3 py-2"
-                  style={{ borderColor: "var(--border)", background: "transparent" }}
+                  style={{
+                    borderColor: "var(--border)",
+                    background: "transparent",
+                  }}
                   placeholder="Your name"
                   required
                 />
@@ -85,7 +91,10 @@ export default function ContactSection() {
                   value={form.email}
                   onChange={update}
                   className="w-full rounded-md border px-3 py-2"
-                  style={{ borderColor: "var(--border)", background: "transparent" }}
+                  style={{
+                    borderColor: "var(--border)",
+                    background: "transparent",
+                  }}
                   placeholder="you@example.com"
                   required
                 />
@@ -98,7 +107,10 @@ export default function ContactSection() {
                 value={form.subject}
                 onChange={update}
                 className="w-full rounded-md border px-3 py-2"
-                style={{ borderColor: "var(--border)", background: "transparent" }}
+                style={{
+                  borderColor: "var(--border)",
+                  background: "transparent",
+                }}
                 placeholder="What's this about?"
               />
             </Field>
@@ -110,7 +122,10 @@ export default function ContactSection() {
                 onChange={update}
                 rows={6}
                 className="w-full rounded-md border px-3 py-2"
-                style={{ borderColor: "var(--border)", background: "transparent" }}
+                style={{
+                  borderColor: "var(--border)",
+                  background: "transparent",
+                }}
                 placeholder="Say hello…"
                 required
               />

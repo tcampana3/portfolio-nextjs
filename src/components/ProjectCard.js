@@ -2,6 +2,7 @@
 "use client";
 import { useState } from "react";
 import CarouselModal from "@/components/CarouselModal";   // ← new modal
+import Image from "next/image";
 
 export default function ProjectCard({ p }) {
   const [open, setOpen] = useState(false);
@@ -45,10 +46,14 @@ export default function ProjectCard({ p }) {
               style={{ borderColor: "var(--border)" }}
             >
               <div className="aspect-[16/10] bg-white">
-                <img
-                  src={src}
-                  alt={`${p.title} ${i + 1}`}
-                  className="w-full h-full object-contain"
+                <Image
+                  src={src} // e.g. "/images/Sorting.gif"
+                  alt={`${p.title} screenshot ${i + 1}`}
+                  fill // fills the parent box
+                  sizes="(max-width: 640px) 100vw, 520px" // responsive hint
+                  className="object-contain"
+                  priority={i === 0} // first image loads first
+                  unoptimized // safe for GitHub Pages
                 />
               </div>
             </button>
