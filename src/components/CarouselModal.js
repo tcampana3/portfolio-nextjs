@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
+import { withBasePath } from "@/components/withBasePath";
 
 export default function CarouselModal({ open, images, startIndex = 0, title, onClose }) {
   const [idx, setIdx] = useState(startIndex);
@@ -49,7 +50,7 @@ export default function CarouselModal({ open, images, startIndex = 0, title, onC
         {/* Image: use a relative wrapper so <Image fill> can size correctly */}
         <div className="relative w-[min(92vw,900px)] aspect-[16/10] mx-auto">
           <Image
-            src={images[idx]}                          // e.g. "/images/Sorting.gif"
+            src={withBasePath(images[idx])}                          // e.g. "/images/Sorting.gif"
             alt={`${title} image ${idx + 1}`}
             fill                                       // fills the wrapper
             className="object-contain rounded-lg bg-white"

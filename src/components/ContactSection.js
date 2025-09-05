@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { withBasePath } from "@/components/withBasePath";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -52,12 +53,12 @@ export default function ContactSection() {
                 <Social
                   href="https://github.com/tcampana3"
                   label="GitHub"
-                  imgSrc="/images/github_logo.png" // put your logo file in /public/images
+                  imgSrc={withBasePath("/images/github_logo.png")} // put your logo file in /public/images
                 />
                 <Social
                   href="https://www.linkedin.com/in/anthony-campana-5b7684253"
                   label="LinkedIn"
-                  imgSrc="/images/linkedin_logo.webp" // put your logo file in /public/images
+                  imgSrc={withBasePath("/images/linkedin_logo.webp")} // put your logo file in /public/images
                 />
                 {/* Add more:
                 <Social href="https://x.com/yourhandle" label="X" imgSrc="/images/x.png" />

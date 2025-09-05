@@ -2,6 +2,7 @@ import Section from "@/components/Section";
 import ContactSection from "@/components/ContactSection";
 import Link from "next/link";
 import Image from "next/image";
+import { withBasePath } from "@/components/withBasePath";
 
 export default function AboutPage() {
   return (
@@ -14,7 +15,7 @@ export default function AboutPage() {
         >
           {/* Headshot */}
           <Image
-            src="/images/profile.JPG"
+            src={withBasePath("/images/profile.JPG")}
             alt="Anthony Campana headshot"
             width={128}
             height={128}

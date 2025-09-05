@@ -3,6 +3,7 @@
 import { useState } from "react";
 import CarouselModal from "@/components/CarouselModal";   // ← new modal
 import Image from "next/image";
+import { withBasePath } from "@/components/withBasePath";
 
 export default function ProjectCard({ p }) {
   const [open, setOpen] = useState(false);
@@ -47,7 +48,7 @@ export default function ProjectCard({ p }) {
             >
               <div className="relative aspect-[16/10] bg-white">
                 <Image
-                  src={src} // e.g. "/images/Sorting.gif"
+                  src={withBasePath(src)} // e.g. "/images/Sorting.gif"
                   alt={`${p.title} screenshot ${i + 1}`}
                   fill // fills the parent box
                   sizes="(max-width: 640px) 100vw, 520px" // responsive hint
