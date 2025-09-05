@@ -1,12 +1,20 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 
 export default function CarouselModal({ open, images, startIndex = 0, title, onClose }) {
   const [idx, setIdx] = useState(startIndex);
   const touchStartX = useRef(null);
 
-  useEffect(() => { if (open) setIdx(startIndex); }, [open, startIndex]);
+  // Keep idx in sync when modal opens
+  useEffect(() => {
+    if (open) setIdx(startIndex);
+  }, [open, startIndex]);
 
+  const prev = useCallback(() => setIdx(i => (i - 1 + images.length) % images.length), [images.length]);
+  const next = useCallback(() => setIdx(i => (i + 1) % images.length), [images.length]);
+
+  // Keyboard controls
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => {
@@ -16,13 +24,11 @@ export default function CarouselModal({ open, images, startIndex = 0, title, onC
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [open, idx]);
+  }, [open, onClose, next, prev]);
 
   if (!open || !images?.length) return null;
 
-  const prev = () => setIdx((i) => (i - 1 + images.length) % images.length);
-  const next = () => setIdx((i) => (i + 1) % images.length);
-
+  // Touch swipe
   const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
   const onTouchEnd = (e) => {
     if (touchStartX.current == null) return;
@@ -40,13 +46,18 @@ export default function CarouselModal({ open, images, startIndex = 0, title, onC
       onTouchEnd={onTouchEnd}
     >
       <div className="relative max-w-[92vw] max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
-        {/* Image */}
-        <img
-          src={images[idx]}
-          alt={`${title} image ${idx + 1}`}
-          className="object-contain bg-white rounded-lg"
-          style={{ maxWidth: "92vw", maxHeight: "80vh" }}
-        />
+        {/* Image: use a relative wrapper so <Image fill> can size correctly */}
+        <div className="relative w-[min(92vw,900px)] aspect-[16/10] mx-auto">
+          <Image
+            src={images[idx]}                          // e.g. "/images/Sorting.gif"
+            alt={`${title} image ${idx + 1}`}
+            fill                                       // fills the wrapper
+            className="object-contain rounded-lg bg-white"
+            sizes="(max-width: 1024px) 100vw, 900px"
+            unoptimized                                 // required for GitHub Pages
+            priority                                    // helps first paint in modal
+          />
+        </div>
 
         {/* Controls */}
         <button
