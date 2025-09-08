@@ -53,12 +53,12 @@ export default function ContactSection() {
                 <Social
                   href="https://github.com/tcampana3"
                   label="GitHub"
-                  imgSrc={withBasePath("/images/github_logo.png")} // put your logo file in /public/images
+                  imgSrc={withBasePath("/images/github_logo.png")} 
                 />
                 <Social
                   href="https://www.linkedin.com/in/anthony-campana-5b7684253"
                   label="LinkedIn"
-                  imgSrc={withBasePath("/images/linkedin_logo.webp")} // put your logo file in /public/images
+                  imgSrc={withBasePath("/images/linkedin_logo.webp")} 
                 />
                 {/* Add more:
                 <Social href="https://x.com/yourhandle" label="X" imgSrc="/images/x.png" />
