@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { withBasePath } from "@/components/withBasePath";
+import Image from "next/image";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
